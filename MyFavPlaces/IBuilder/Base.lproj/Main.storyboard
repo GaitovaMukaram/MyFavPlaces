@@ -416,6 +416,18 @@
                                     <action selector="closeVC" destination="RxC-Vc-3gI" eventType="touchUpInside" id="I79-59-Ac4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KP1-vJ-3VQ">
+                                <rect key="frame" x="323" y="662" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Z55-Mr-77b"/>
+                                    <constraint firstAttribute="height" constant="30" id="eEq-21-Eks"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="RxC-Vc-3gI" eventType="touchUpInside" id="owH-3C-4Qx"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="swR-QJ-6N5">
                                 <rect key="frame" x="176.66666666666666" y="386" width="40" height="40"/>
                                 <constraints>
@@ -440,16 +452,16 @@
                                     <action selector="doneButtonPressed" destination="RxC-Vc-3gI" eventType="touchUpInside" id="uRx-aW-E4p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KP1-vJ-3VQ">
-                                <rect key="frame" x="323" y="662" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjw-w5-D3v">
+                                <rect key="frame" x="171.66666666666666" y="762" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Z55-Mr-77b"/>
-                                    <constraint firstAttribute="height" constant="30" id="eEq-21-Eks"/>
+                                    <constraint firstAttribute="height" constant="50" id="FKW-qn-U0q"/>
+                                    <constraint firstAttribute="width" constant="50" id="vLH-nr-Jv2"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="location"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GetDirection"/>
                                 <connections>
-                                    <action selector="centerViewInUserLocation" destination="RxC-Vc-3gI" eventType="touchUpInside" id="owH-3C-4Qx"/>
+                                    <action selector="goButtonPressed" destination="RxC-Vc-3gI" eventType="touchUpInside" id="boK-IR-OUZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -458,8 +470,10 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="nz0-gU-q4K" secondAttribute="bottom" id="8pk-mH-TFe"/>
                             <constraint firstItem="6x7-hD-Os8" firstAttribute="leading" secondItem="bcb-SY-tqy" secondAttribute="leading" constant="16" id="ALI-dl-NI3"/>
+                            <constraint firstItem="Jjw-w5-D3v" firstAttribute="centerX" secondItem="vMs-9H-bFR" secondAttribute="centerX" id="Afn-mQ-gp7"/>
                             <constraint firstItem="bcb-SY-tqy" firstAttribute="trailing" secondItem="6x7-hD-Os8" secondAttribute="trailing" constant="16" id="DaK-zW-0Ya"/>
                             <constraint firstItem="swR-QJ-6N5" firstAttribute="centerX" secondItem="vMs-9H-bFR" secondAttribute="centerX" id="EBA-40-A7T"/>
+                            <constraint firstItem="bcb-SY-tqy" firstAttribute="bottom" secondItem="Jjw-w5-D3v" secondAttribute="bottom" constant="40" id="Ith-Xh-5WA"/>
                             <constraint firstItem="An6-zX-Ygr" firstAttribute="centerX" secondItem="vMs-9H-bFR" secondAttribute="centerX" id="M7b-Za-ryB"/>
                             <constraint firstItem="clN-7L-arA" firstAttribute="top" secondItem="bcb-SY-tqy" secondAttribute="top" constant="40" id="PpO-0k-xvh"/>
                             <constraint firstItem="nz0-gU-q4K" firstAttribute="top" secondItem="vMs-9H-bFR" secondAttribute="top" id="Xnh-Vv-i5o"/>
@@ -476,6 +490,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="6x7-hD-Os8" id="yHh-2d-Ad9"/>
                         <outlet property="doneButton" destination="An6-zX-Ygr" id="fI5-wB-SbH"/>
+                        <outlet property="goButton" destination="Jjw-w5-D3v" id="q5g-k3-6qU"/>
                         <outlet property="mapPinImage" destination="swR-QJ-6N5" id="0kI-8l-2Gz"/>
                         <outlet property="mapView" destination="nz0-gU-q4K" id="EUy-Z6-2Wc"/>
                     </connections>
@@ -515,6 +530,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="Pin" width="40" height="40"/>
         <image name="Placeholder" width="20" height="20"/>

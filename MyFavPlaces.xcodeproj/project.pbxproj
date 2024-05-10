@@ -16,6 +16,7 @@
 		9F61B3E62BE9786800F33522 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61B3E52BE9786800F33522 /* TableViewCell.swift */; };
 		9F61B3E82BEB59BE00F33522 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61B3E72BEB59BE00F33522 /* PlaceModel.swift */; };
 		9F61B3EA2BEB6C5900F33522 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61B3E92BEB6C5900F33522 /* NewPlaceViewController.swift */; };
+		9F6A8B142BEE83360067E00F /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A8B132BEE83360067E00F /* MapManager.swift */; };
 		9F7A39CF2BEC32CF009C98BD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A39CE2BEC32CF009C98BD /* StorageManager.swift */; };
 		9F7C127B2BEDE66700DDF707 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C127A2BEDE66700DDF707 /* MapViewController.swift */; };
 		9FF978462BED2B3500D2E171 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF978452BED2B3500D2E171 /* RatingControl.swift */; };
@@ -35,6 +36,7 @@
 		9F61B3E52BE9786800F33522 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		9F61B3E72BEB59BE00F33522 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		9F61B3E92BEB6C5900F33522 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		9F6A8B132BEE83360067E00F /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		9F7A39CE2BEC32CF009C98BD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9F7C127A2BEDE66700DDF707 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9FF978452BED2B3500D2E171 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -74,21 +76,62 @@
 		9F61B3CE2BE9747500F33522 /* MyFavPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				9F61B3CF2BE9747500F33522 /* AppDelegate.swift */,
+				9F6A8B152BEE8EAF0067E00F /* ViewControllers */,
+				9F6A8B172BEE8ED70067E00F /* Helpers */,
+				9F6A8B162BEE8ECA0067E00F /* Models */,
+				9F6A8B182BEE8EEE0067E00F /* Support Files */,
+				9F6A8B192BEE8F2B0067E00F /* IBuilder */,
+				9F61B3DD2BE9747600F33522 /* Info.plist */,
+			);
+			path = MyFavPlaces;
+			sourceTree = "<group>";
+		};
+		9F6A8B152BEE8EAF0067E00F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				9F61B3E32BE9784E00F33522 /* MainViewController.swift */,
 				9F61B3E52BE9786800F33522 /* TableViewCell.swift */,
 				9F7C127A2BEDE66700DDF707 /* MapViewController.swift */,
-				9FF978452BED2B3500D2E171 /* RatingControl.swift */,
-				9F61B3D12BE9747500F33522 /* SceneDelegate.swift */,
-				9F61B3D52BE9747500F33522 /* Main.storyboard */,
-				9F61B3D82BE9747600F33522 /* Assets.xcassets */,
-				9F61B3DA2BE9747600F33522 /* LaunchScreen.storyboard */,
-				9F61B3DD2BE9747600F33522 /* Info.plist */,
-				9F61B3E72BEB59BE00F33522 /* PlaceModel.swift */,
-				9F7A39CE2BEC32CF009C98BD /* StorageManager.swift */,
 				9F61B3E92BEB6C5900F33522 /* NewPlaceViewController.swift */,
 			);
-			path = MyFavPlaces;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9F6A8B162BEE8ECA0067E00F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F61B3E72BEB59BE00F33522 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F6A8B172BEE8ED70067E00F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F6A8B132BEE83360067E00F /* MapManager.swift */,
+				9F7A39CE2BEC32CF009C98BD /* StorageManager.swift */,
+				9FF978452BED2B3500D2E171 /* RatingControl.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9F6A8B182BEE8EEE0067E00F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F61B3CF2BE9747500F33522 /* AppDelegate.swift */,
+				9F61B3D82BE9747600F33522 /* Assets.xcassets */,
+				9F61B3D12BE9747500F33522 /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		9F6A8B192BEE8F2B0067E00F /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				9F61B3D52BE9747500F33522 /* Main.storyboard */,
+				9F61B3DA2BE9747600F33522 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 		CEEB0E5985AA13DFEEF470C7 /* Frameworks */ = {
@@ -228,6 +271,7 @@
 				9F7A39CF2BEC32CF009C98BD /* StorageManager.swift in Sources */,
 				9F7C127B2BEDE66700DDF707 /* MapViewController.swift in Sources */,
 				9FF978462BED2B3500D2E171 /* RatingControl.swift in Sources */,
+				9F6A8B142BEE83360067E00F /* MapManager.swift in Sources */,
 				9F61B3E82BEB59BE00F33522 /* PlaceModel.swift in Sources */,
 				9F61B3D02BE9747500F33522 /* AppDelegate.swift in Sources */,
 				9F61B3D22BE9747500F33522 /* SceneDelegate.swift in Sources */,
