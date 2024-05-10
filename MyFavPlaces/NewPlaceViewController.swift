@@ -72,15 +72,19 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
         }
     }
     
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" { return }
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = placeLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
+    }
+    
     func savePlace() {
         
-        var image: UIImage?
-        
-        if imageIsChanged {
-            image = placeImage.image
-        } else {
-            image = UIImage(imageLiteralResourceName: "imagePlaceholder")
-        }
+        let image = imageIsChanged ? placeImage.image : UIImage(imageLiteralResourceName: "imagePlaceholder")
         
         let imageData = image?.pngData()
         
