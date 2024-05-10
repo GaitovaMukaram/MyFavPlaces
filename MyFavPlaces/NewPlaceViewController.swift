@@ -26,7 +26,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView(frame: CGRect(x: 0, 
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
                                                          y: 0,
                                                          width: tableView.frame.size.width,
                                                          height: 1))
@@ -74,12 +74,20 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place.name = placeName.text!
-        mapVC.place.location = placeLocation.text
-        mapVC.place.type = placeType.text
-        mapVC.place.imageData = placeImage.image?.pngData()
+        
+        guard
+            let identifier = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+            else { return }
+        
+        mapVC.incomeSegueIdentifier = identifier
+        
+        if identifier == "showPlace" {
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
+        }
     }
     
     func savePlace() {
@@ -91,7 +99,7 @@ class NewPlaceViewController: UITableViewController, UINavigationControllerDeleg
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
                              type: placeType.text,
-                             imageData: imageData, 
+                             imageData: imageData,
                              rating: Double(ratingControl.rating))
         if currentPlace != nil {
             try! realm.write {
